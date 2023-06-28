@@ -31,7 +31,7 @@ const register = async (
       _req: express.Request,
       _res: express.Response
     ): Promise<void> => {
-      await Prisma.patients.update({
+      await Prisma.patients.updateMany({
         where: {
           Email: email,
         },
