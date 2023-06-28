@@ -24,7 +24,9 @@ const register = async (
         Token: makeId(64),
       },
     });
+
     const randomString: string = makeId(64);
+    
     sendConfirmationEmail(email, randomString);
     res.send("Registration done, check emails to confirm the account");
     const confirmRegistration = async (
@@ -45,4 +47,5 @@ const register = async (
   }
 };
 app2.listen(3001);
+
 export default register;
