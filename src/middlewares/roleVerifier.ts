@@ -17,15 +17,11 @@ export const roleVerifier = (
     if (Prisma.doctors.findMany({ where: { TokenAmm: tokenAmm } }) != null) {
       next();
     }
-    if (
-      Prisma.secretariats.findMany({ where: { TokenAmm: tokenAmm } }) != null
-    ) {
+    if (Prisma.secretariats.findMany({ where: { TokenAmm: tokenAmm } }) != null) {
       next();
     }
   }
-  res
-    .status(405)
-    .send(
+  res.status(405).send(
       "you are not allowed to access the resource if you are not in the staff"
     );
 };
