@@ -93,7 +93,7 @@ fai4();
   --GET-{"tokenAmm":"foo"}
   --GET-{"doctorName":"foo","tokenAmm":"foo"}
   --PUT-{"doctorName":"foo","toChange":"il campo","data":"foobar","tokenAmm":"foo"} che risponde lo status dell'azione
-  --POST-{"doctorName":"foo","doctorSurname":"foo","doctorEmail":"foo","doctorUsername":"foo","number":"foo","days":"foo","workTime":"H-H","tokenAmm": "foo"} dove il back-end prende il name, lo carica sul database, con affianco un makeId(64) criptato
+  --POST-{"doctorName":"foo","doctorSurname":"foo","doctorEmail":"foo","id":"foo","number":"foo","days":"foo","workTime":"H-H","tokenAmm": "foo"} dove il back-end prende il name, lo carica sul database, con affianco un makeId(64) criptato
 
 - /pazienti: a questa rotta possono accederci solamente i dottori
   --**_requestsForms_**:per ogni azione nel body dovrà assere presente un "tokenAmm" per veriificare chi sta mandando le richieste.
