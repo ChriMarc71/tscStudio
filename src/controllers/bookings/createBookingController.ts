@@ -1,10 +1,8 @@
 import { Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import Prisma from "../../database/connection";
 
 const createBooking = async (req: Request, res: Response) => {
-  await prisma.bookings.create({
+  await Prisma.bookings.create({
     data: {
       StartTime: req.body.startTime,
       EndTime: req.body.endTime,
