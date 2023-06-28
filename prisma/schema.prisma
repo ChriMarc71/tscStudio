@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model doctors {
+  Id       Int      @id @default(autoincrement())
+  Name     String?  @db.VarChar(50)
+  Surname  String?  @db.VarChar(50)
+  Email    String?  @db.VarChar(100)
+  Username String?  @db.VarChar(50)
+  Password String?  @db.VarChar(50)
+  Number   String?  @db.VarChar(20)
+  TokenAmm String?  @db.VarChar(255)
+  IsEnable Boolean?
+}
+
+model patients {
+  Id              Int      @id @default(autoincrement())
+  Name            String?  @db.VarChar(50)
+  Surname         String?  @db.VarChar(50)
+  Email           String?  @db.VarChar(100)
+  Username        String?  @db.VarChar(50)
+  Password        String?  @db.VarChar(50)
+  Number          String?  @db.VarChar(20)
+  Doctor          String?  @db.VarChar(50)
+  EmailConfirmed  Boolean?
+  DoctorConfirmed Boolean?
+  IsEnable        Boolean?
+  Token           String   @unique(map: "Token") @db.VarChar(255)
+}
+
+model secretariats {
+  Id       Int      @id @default(autoincrement())
+  Name     String?  @db.VarChar(50)
+  Surname  String?  @db.VarChar(50)
+  Email    String?  @db.VarChar(100)
+  Username String?  @db.VarChar(50)
+  Password String?  @db.VarChar(50)
+  Number   String?  @db.VarChar(20)
+  TokenAmm String?  @db.VarChar(255)
+  IsEnable Boolean?
+}
+
+model admin {
+  Id       Int     @id @default(autoincrement())
+  Name     String? @db.VarChar(50)
+  Surname  String? @db.VarChar(50)
+  Email    String? @db.VarChar(100)
+  Username String? @db.VarChar(50)
+  Password String? @db.VarChar(50)
+  TokenAmm String? @db.VarChar(255)
+}
+
+model bookings {
+  Id              Int       @id @default(autoincrement())
+  StartTime       DateTime? @db.DateTime(0)
+  EndTime         DateTime? @db.DateTime(0)
+  PatientUsername String?   @db.VarChar(50)
+  PatientNumber   String?   @db.VarChar(50)
+  DoctorUsername  String?   @db.VarChar(50)
+}
