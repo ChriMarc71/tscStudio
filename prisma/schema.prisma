@@ -62,5 +62,6 @@ model bookings {
   EndTime         DateTime? @db.DateTime(0)
   PatientUsername String?   @db.VarChar(50)
   PatientNumber   String?   @db.VarChar(50)
-  id  String?   @db.VarChar(50)
+  DoctorUsername  String?   @db.VarChar(50)
+
 }
