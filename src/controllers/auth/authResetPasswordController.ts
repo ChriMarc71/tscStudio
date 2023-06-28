@@ -12,4 +12,5 @@ const resetPassword = async (req: Request, res: Response): Promise<void> => {
   });
   res.send("Password aggiornata");
 };
+
 export default resetPassword;
