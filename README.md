@@ -1,4 +1,4 @@
-# SERVER BACK-END PER OSPEDALE
+# SERVER BACK-END PER STUDIO MEDICO
 
 Ci sono 2 parti distinte:
 
