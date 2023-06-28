@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import Prisma from "../../database/connection";
 import mailTransporter from "../../utils/mailTransporter";
+
 async function forgottenPassword(req: Request, res: Response) {
   const email: string = req.body.email;
   const resetToken = await Prisma.patients.findMany({
