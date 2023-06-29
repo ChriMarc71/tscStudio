@@ -11,4 +11,26 @@ const mailTransporter: Transporter = nodemailer.createTransport({
   tls: { rejectUnauthorized: false },
 });
 
-export default mailTransporter;
+export async function sendEmail(
+  email: string,
+  subject: string,
+  text: string,
+  html:any
+): Promise<void> {
+  mailTransporter.sendMail(
+    {
+      from: "provaProgettoCGM@outlook.it",
+      to: email,
+      subject: subject,
+      text: text,
+      html: html,
+    },
+    function (error: any) {
+      if (error) {
+        console.log(error);
+      }
+    }
+  );
+}
+
+export default { mailTransporter, sendEmail };
