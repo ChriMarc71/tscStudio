@@ -29,7 +29,8 @@ const register = async (req: express.Request,res: express.Response): Promise<voi
         Number: phoneNumber,
         Doctor: doctor,
         DoctorConfirmed: false,
-        IsEnable: false,
+        EmailConfirmed: false,
+        IsEnable:true,
         Token: makeId(64),
       },
     });
@@ -48,7 +49,7 @@ const register = async (req: express.Request,res: express.Response): Promise<voi
           Email: email,
         },
         data: {
-          IsEnable: true,
+          EmailConfirmed: true,
         },
       });
       _res.send("Registration confirmed");
