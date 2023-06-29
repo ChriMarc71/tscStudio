@@ -1,6 +1,4 @@
-import crypto from "crypto";
-
-function makeid(length: any) {
+function makeId(length: number) {
   let result = "";
   const characters: string =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -11,12 +9,6 @@ function makeid(length: any) {
     counter += 1;
   }
   return result;
-}
-
-function makeId(length: any): string {
-  return length == "string"
-    ? makeid(64)
-    : crypto.randomBytes(length).toString();
 }
 
 export { makeId };

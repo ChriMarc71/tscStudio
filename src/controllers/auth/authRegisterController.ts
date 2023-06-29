@@ -35,7 +35,7 @@ const register = async (req: express.Request,res: express.Response): Promise<voi
       },
     });
 
-    const randomString: string = makeId("string");
+    const randomString: string = makeId(64);
     const subject: string = "CONFIRM EMAIL";
     const text: string =" Paste the following link in the search bar  "+`'http://localhost:3001/${randomString}'`;
     const html: any = `<a href='http://localhost:3001/${randomString}'>Cliccami</a>`;
