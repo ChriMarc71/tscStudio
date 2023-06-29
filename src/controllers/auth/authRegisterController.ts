@@ -5,22 +5,30 @@ import express from "express";
 import isVaildEmail from "../../utils/mailValidator";
 
 const app2 = express();
-const register = async (
-  req: express.Request,
-  res: express.Response
-): Promise<void> => {
+const register = async (req: express.Request,res: express.Response): Promise<void> => {
   const email = req.body.email;
-  console.log(email);
+
   if (!isVaildEmail(email)) {
     res.send("invalid email");
   } else {
+
+    const fname = req.body.fname;
+    const lname = req.body.lname;
     const username = req.body.username;
     const password = req.body.password;
+    const phoneNumber = req.body.phoneNumber;
+    const doctor = req.body.doctor;
+
     await Prisma.patients.create({
       data: {
         Email: email,
         Username: username,
         Password: password,
+        FirstName: fname,
+        LastName: lname,
+        PhoneNumber: phoneNumber,
+        Doctor: doctor,
+        DoctorConfirmed: false,
         IsEnable: false,
         Token: makeId(64),
       },

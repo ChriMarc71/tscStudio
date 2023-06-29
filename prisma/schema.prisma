@@ -21,8 +21,8 @@ model doctors {
 
 model patients {
   Id              Int      @id @default(autoincrement())
-  Name            String?  @db.VarChar(50)
-  Surname         String?  @db.VarChar(50)
+  FirstName       String?  @db.VarChar(50)
+  LastName        String?  @db.VarChar(50)
   Email           String?  @db.VarChar(100)
   Username        String?  @db.VarChar(50)
   Password        String?  @db.VarChar(50)
