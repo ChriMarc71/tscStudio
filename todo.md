@@ -21,6 +21,7 @@
 - [x] implementare i **_metodi di /prenotazioni_** Simo
 - [ ] criptare i dati nelle tabelle del database: i dati sensibili
 - [ ] ottenere i log di tutti le azioni nel back-end e database
+
 ## Dati prenotazioni
 
 Id INT AUTO_INCREMENT PRIMARY KEY,
