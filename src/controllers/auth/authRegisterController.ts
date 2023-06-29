@@ -1,5 +1,5 @@
 import Prisma from "../../database/connection";
-import { sendConfirmationEmail } from "../../utils/mailTransporter";
+import { sendEmail } from "../../utils/mailTransporter";
 import { makeId } from "../../utils/makeId";
 import express from "express";
 import isVaildEmail from "../../utils/mailValidator";
@@ -30,7 +30,7 @@ const register = async (
     const text:string ="Click the button or paste the following link in the search bar 'http://localhost:3001/${randomString}'";
     const html:any=`<a href='http://localhost:3001/${randomString}'>Cliccami</a>`;
 
-    sendConfirmationEmail(email,subject,text,html);
+    sendEmail(email,subject,text,html);
     res.send("Registration done, check emails to confirm the account");
 
     const confirmRegistration = async (_req: express.Request,_res: express.Response): Promise<void> => {

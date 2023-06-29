@@ -11,7 +11,7 @@ const mailTransporter: Transporter = nodemailer.createTransport({
   tls: { rejectUnauthorized: false },
 });
 
-export async function sendConfirmationEmail(
+export async function sendEmail(
   email: string,
   subject: string,
   text: string,
@@ -33,4 +33,4 @@ export async function sendConfirmationEmail(
   );
 }
 
-export default { mailTransporter, sendConfirmationEmail };
+export default { mailTransporter, sendEmail };
