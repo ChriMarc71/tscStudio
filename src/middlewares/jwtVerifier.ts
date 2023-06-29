@@ -15,7 +15,6 @@ function isValidJwt(req: Request, res: Response, next: NextFunction): void {
     function (err, decoded) {
       if (err) {
         res.status(403).send(err.message);
-        return;
       }
     }
   );
