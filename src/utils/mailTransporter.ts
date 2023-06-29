@@ -1,12 +1,17 @@
 import nodemailer, { Transporter } from "nodemailer";
+import dotenv from 'dotenv';
+
+dotenv.config();
+const user = process.env.USER;
+const pass = process.env.PASS;
 
 const mailTransporter: Transporter = nodemailer.createTransport({
   host: "smtp.office365.com",
   port: 587,
   secure: false,
   auth: {
-    user: "provaProgettoCGM@outlook.it",
-    pass: "CiaoCiao99",
+    user: user,
+    pass: pass,
   },
   tls: { rejectUnauthorized: false },
 });
@@ -19,7 +24,7 @@ export async function sendEmail(
 ): Promise<void> {
   mailTransporter.sendMail(
     {
-      from: "provaProgettoCGM@outlook.it",
+      from: process.env.USER,
       to: email,
       subject: subject,
       text: text,
