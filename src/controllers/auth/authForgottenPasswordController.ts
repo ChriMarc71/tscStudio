@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import Prisma from "../../database/connection";
-import mailTransporter from "../../utils/mailTransporter";
+
+import { sendConfirmationEmail } from "../../utils/mailTransporter";
 
 async function forgottenPassword(req: Request, res: Response) {
   const email: string = req.body.email;
@@ -13,23 +14,14 @@ async function forgottenPassword(req: Request, res: Response) {
     },
   });
 
-  res.send("Email for password recovery sent!");
+ 
+  const subject: string = "RESET PASSWORD";
+  const text:string ="Copy and paste the following token in the recovery form :\n\n"+resetToken[0].Token;
+  let html:any;
 
-  mailTransporter.sendMail(
-    {
-      from: "provaProgettoCGM@outlook.it", // sender address
-      to: email, // list of receivers
-      subject: "RESET PASSWORD",
-      text:
-        "Copy and paste the following token in the recovery form :\n\n" +
-        resetToken[0].Token,
-    },
-    function (error: any) {
-      if (error) {
-        console.log(error);
-      }
-    }
-  );
+  sendConfirmationEmail(email,subject,text,html);
+  res.send("Email for password recovery sent!");
+    
 }
 
 export default forgottenPassword;
