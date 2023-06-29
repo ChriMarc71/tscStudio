@@ -9,59 +9,60 @@ datasource db {
 
 model doctors {
   Id       Int      @id @default(autoincrement())
-  Name     String?  @db.VarChar(50)
-  Surname  String?  @db.VarChar(50)
-  Email    String?  @db.VarChar(100)
-  Username String?  @db.VarChar(50)
-  Password String?  @db.VarChar(50)
-  Number   String?  @db.VarChar(20)
-  TokenAmm String?  @db.VarChar(255)
+  Name     String?  @db.VarChar(50) /// @encrypted
+  Surname  String?  @db.VarChar(50) /// @encrypted
+  Email    String?  @db.VarChar(100) /// @encrypted
+  Username String?  @db.VarChar(50) /// @encrypted
+  Password String?  @db.VarChar(50) /// @encrypted
+  Number   String?  @db.VarChar(20) /// @encrypted
+  TokenAmm String?  @db.VarChar(255) /// @encrypted
   IsEnable Boolean?
 }
 
 model patients {
   Id              Int      @id @default(autoincrement())
-  Name            String?  @db.VarChar(50)
-  Surname         String?  @db.VarChar(50)
-  Email           String? @unique @db.VarChar(100)
-  Username        String?  @db.VarChar(50)
-  Password        String?  @db.VarChar(50)
-  Number          String?  @db.VarChar(20)
-  Doctor          String?  @db.VarChar(50)
+  Name            String?  @db.VarChar(50)  /// @encrypted
+  Surname         String?  @db.VarChar(50)  /// @encrypted
+  Email           String? @unique @db.VarChar(100)  /// @encrypted
+  EmailHash           String? @unique @db.VarChar(100)  /// @encryption:hash(Email)
+  Username        String?  @db.VarChar(50)  /// @encrypted
+  Password        String?  @db.VarChar(50)  /// @encrypted
+  Number          String?  @db.VarChar(20)  /// @encrypted
+  Doctor          String?  @db.VarChar(50)  /// @encrypted
   EmailConfirmed  Boolean?
   DoctorConfirmed Boolean?
   IsEnable        Boolean?
-  Token           String   @unique(map: "Token") @db.VarChar(255)
+  Token           String   @unique(map: "Token") @db.VarChar(255) /// @encrypted
 }
 
 model secretariats {
   Id       Int      @id @default(autoincrement())
-  Name     String?  @db.VarChar(50)
-  Surname  String?  @db.VarChar(50)
-  Email    String?  @db.VarChar(100)
-  Username String?  @db.VarChar(50)
-  Password String?  @db.VarChar(50)
-  Number   String?  @db.VarChar(20)
-  TokenAmm String?  @db.VarChar(255)
+  Name     String?  @db.VarChar(50) /// @encrypted
+  Surname  String?  @db.VarChar(50) /// @encrypted
+  Email    String?  @db.VarChar(100)  /// @encrypted
+  Username String?  @db.VarChar(50) /// @encrypted
+  Password String?  @db.VarChar(50) /// @encrypted
+  Number   String?  @db.VarChar(20) /// @encrypted
+  TokenAmm String?  @db.VarChar(255)  /// @encrypted
   IsEnable Boolean?
 }
 
 model admin {
   Id       Int     @id @default(autoincrement())
-  Name     String? @db.VarChar(50)
-  Surname  String? @db.VarChar(50)
-  Email    String? @db.VarChar(100)
-  Username String? @db.VarChar(50)
-  Password String? @db.VarChar(50)
-  TokenAmm String? @db.VarChar(255)
+  Name     String? @db.VarChar(50)  /// @encrypted
+  Surname  String? @db.VarChar(50)  /// @encrypted
+  Email    String? @db.VarChar(100) /// @encrypted
+  Username String? @db.VarChar(50)  /// @encrypted
+  Password String? @db.VarChar(50)  /// @encrypted
+  TokenAmm String? @db.VarChar(255) /// @encrypted
 }
 
 model bookings {
   Id              Int       @id @default(autoincrement())
-  StartTime       DateTime? @db.DateTime(0)
+  StartTime       DateTime? @db.DateTime(0) 
   EndTime         DateTime? @db.DateTime(0)
-  PatientUsername String?   @db.VarChar(50)
-  PatientNumber   String?   @db.VarChar(50)
-  DoctorUsername  String?   @db.VarChar(50)
+  PatientUsername String?   @db.VarChar(50) /// @encrypted
+  PatientNumber   String?   @db.VarChar(50) /// @encrypted
+  DoctorUsername  String?   @db.VarChar(50) /// @encrypted
 
 }
