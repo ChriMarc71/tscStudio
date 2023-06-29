@@ -24,7 +24,7 @@ export async function sendEmail(
 ): Promise<void> {
   mailTransporter.sendMail(
     {
-      from: process.env.USER,
+      from: user,
       to: email,
       subject: subject,
       text: text,

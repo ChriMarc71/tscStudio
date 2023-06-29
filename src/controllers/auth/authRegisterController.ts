@@ -28,12 +28,13 @@ const register = async (req: express.Request,res: express.Response): Promise<voi
         Number: phoneNumber,
         Doctor: doctor,
         DoctorConfirmed: false,
-        IsEnable: false,
+        EmailConfirmed: false,
+        IsEnable:true,
         Token: makeId(64),
       },
     });
 
-    const randomString: string = makeId("string");
+    const randomString: string = makeId(64);
     const subject: string = "CONFIRM EMAIL";
     const text: string =" Paste the following link in the search bar  "+`'http://localhost:3001/${randomString}'`;
     const html: any = `<a href='http://localhost:3001/${randomString}'>Cliccami</a>`;
@@ -47,7 +48,7 @@ const register = async (req: express.Request,res: express.Response): Promise<voi
           Email: email,
         },
         data: {
-          IsEnable: true,
+          EmailConfirmed: true,
         },
       });
       _res.send("Registration confirmed");

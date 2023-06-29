@@ -12,6 +12,7 @@ const login = async (req: Request, res: Response) => {
       Username: username,
       Password: password,
       IsEnable: true,
+      EmailConfirmed:true,
     },
   });
 
