@@ -5,8 +5,8 @@ const mailTransporter: Transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: process.env.user,
-    pass: process.env.pass,
+    user: "provaProgettoCGM@outlook.it",
+    pass: "CiaoCiao99",
   },
   tls: { rejectUnauthorized: false },
 });
@@ -19,7 +19,7 @@ export async function sendEmail(
 ): Promise<void> {
   mailTransporter.sendMail(
     {
-      from: process.env.user,
+      from: "provaProgettoCGM@outlook.it",
       to: email,
       subject: subject,
       text: text,
