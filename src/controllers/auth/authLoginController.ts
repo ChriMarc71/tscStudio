@@ -14,22 +14,19 @@ const login = async (req: Request, res: Response) => {
       IsEnable: true,
     },
   });
+
   if (founded.length != 0) {
-    const token = jwt.sign(
-      { Id: founded[0].Id },
-      "AlgernonAlgernonAlgernonAlgernon",
-      {
+    const token = jwt.sign({ Id: founded[0].Id },"AlgernonAlgernonAlgernonAlgernon",
+    {
         expiresIn: "4h",
         algorithm: "HS256",
-      }
+    }
     );
-    res.json({
-      Token: token,
-    });
+
+    res.json({Token: token});
+
   } else {
-    res.send(
-      "Credentials invalid or account not enabled, check emails to confirm the account!"
-    );
+    res.send("Credentials invalid or account not enabled, check emails to confirm the account!");
   }
 };
 

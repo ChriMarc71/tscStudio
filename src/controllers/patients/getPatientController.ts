@@ -6,6 +6,7 @@ const prisma = new PrismaClient();
 const getPatients = async (req: Request, res: Response): Promise<void> => {
   let id: number | undefined = req.body.id;
   let patients;
+
   if (typeof id !== "undefined") {
     patients = await prisma.patients.findUnique({
       where: {

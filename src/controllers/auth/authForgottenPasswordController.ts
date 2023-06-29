@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import Prisma from "../../database/connection";
-
 import { sendEmail } from "../../utils/mailTransporter";
 
 async function forgottenPassword(req: Request, res: Response) {

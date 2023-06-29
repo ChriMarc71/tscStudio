@@ -36,17 +36,13 @@ const register = async (req: express.Request,res: express.Response): Promise<voi
 
     const randomString: string = makeId("string");
     const subject: string = "CONFIRM EMAIL";
-    const text: string =
-      "Click the button or paste the following link in the search bar 'http://localhost:3001/${randomString}'";
+    const text: string =" Paste the following link in the search bar  "+`'http://localhost:3001/${randomString}'`;
     const html: any = `<a href='http://localhost:3001/${randomString}'>Cliccami</a>`;
 
     sendEmail(email, subject, text, html);
     res.send("Registration done, check emails to confirm the account");
 
-    const confirmRegistration = async (
-      _req: express.Request,
-      _res: express.Response
-    ): Promise<void> => {
+    const confirmRegistration = async (_req: express.Request, _res: express.Response): Promise<void> => {
       await Prisma.patients.updateMany({
         where: {
           Email: email,
@@ -57,9 +53,11 @@ const register = async (req: express.Request,res: express.Response): Promise<voi
       });
       _res.send("Registration confirmed");
     };
+
     app2.get("/" + randomString, confirmRegistration);
   }
 };
+
 app2.listen(3001);
 
 export default register;

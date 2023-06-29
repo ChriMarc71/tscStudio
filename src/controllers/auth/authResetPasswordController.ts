@@ -10,6 +10,7 @@ const resetPassword = async (req: Request, res: Response): Promise<void> => {
       Token: makeId(64),
     },
   });
+  
   res.send("Password aggiornata");
 };
 

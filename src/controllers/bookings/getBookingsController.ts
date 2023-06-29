@@ -4,6 +4,7 @@ import Prisma from "../../database/connection";
 const getBooking = async (req: Request, res: Response) => {
   let id = req.body.bookingId;
   let bookings;
+
   if (typeof id != "undefined") {
     bookings = await Prisma.bookings.findUnique({
       where: {
