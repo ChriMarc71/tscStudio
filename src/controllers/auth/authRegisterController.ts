@@ -11,7 +11,6 @@ const register = async (req: express.Request,res: express.Response): Promise<voi
   if (!isVaildEmail(email)) {
     res.send("invalid email");
   } else {
-
     const fname = req.body.fname;
     const lname = req.body.lname;
     const username = req.body.username;
