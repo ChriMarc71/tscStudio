@@ -15,7 +15,7 @@ model doctors {
   Username String?  @db.VarChar(50) /// @encrypted
   Password String?  @db.VarChar(50) /// @encrypted
   Number   String?  @db.VarChar(20) /// @encrypted
-  TokenAmm String?  @db.VarChar(255) /// @encrypted
+  TokenAmm String?  @unique @db.VarChar(255) /// @encrypted
   IsEnable Boolean?
 }
 
@@ -43,7 +43,7 @@ model secretariats {
   Username String?  @db.VarChar(50) /// @encrypted
   Password String?  @db.VarChar(50) /// @encrypted
   Number   String?  @db.VarChar(20) /// @encrypted
-  TokenAmm String?  @db.VarChar(255)  /// @encrypted
+  TokenAmm String?  @unique @db.VarChar(255)  /// @encrypted
   IsEnable Boolean?
 }
 
@@ -54,7 +54,7 @@ model admin {
   Email    String? @db.VarChar(100) /// @encrypted
   Username String? @db.VarChar(50)  /// @encrypted
   Password String? @db.VarChar(50)  /// @encrypted
-  TokenAmm String? @db.VarChar(255) /// @encrypted
+  TokenAmm String? @unique @db.VarChar(255) /// @encrypted
 }
 
 model bookings {

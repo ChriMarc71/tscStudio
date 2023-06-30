@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use("/admin", adminRouter);
 app.use("/auth", gestorRouter);
 app.use("/booking", bookingRouter);
-app.use("/patient", patientRouter);
+app.use("/patients", patientRouter);
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
