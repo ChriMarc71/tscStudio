@@ -2,9 +2,10 @@ import { Request, Response } from "express";
 import Prisma from "../../database/connection";
 
 
+
 const getPatients = async (req: Request, res: Response): Promise<void> => {
   let id: number | undefined = req.body.id;
-  let patients;
+  let patients;console.log(4)
 
   if (typeof id !== "undefined") {
     patients = await Prisma.patients.findUnique({
