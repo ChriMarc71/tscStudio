@@ -6,7 +6,9 @@ dotenv.config();
 
 const Prisma = new PrismaClient();
 
+const decryptionKeys:string = process.env.PRISMA_FIELD_ENCRYPTION_KEY+"";
+
 // This is a function, don't forget to call it:
-Prisma.$use(fieldEncryptionMiddleware({ encryptionKey: process.env.PRISMA_FIELD_ENCRYPTION_KEY}))
+Prisma.$use(fieldEncryptionMiddleware({ decryptionKeys: [decryptionKeys] }))
 
 export default Prisma;
