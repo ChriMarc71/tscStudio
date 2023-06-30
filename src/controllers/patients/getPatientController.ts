@@ -5,7 +5,7 @@ import Prisma from "../../database/connection";
 
 const getPatients = async (req: Request, res: Response): Promise<void> => {
   let id: number | undefined = req.body.id;
-  let patients;console.log(4)
+  let patients;
 
   if (typeof id !== "undefined") {
     patients = await Prisma.patients.findUnique({

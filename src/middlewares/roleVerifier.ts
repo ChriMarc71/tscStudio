@@ -8,7 +8,7 @@ export const roleVerifier = async(
 ): Promise<void> => {
   const tokenAmm: string = req.body.tokenAmm;
   const path = req.baseUrl;
-  console.log(path)
+  
 
   if (path == "/admin") {
     if ((await Prisma.admin.findMany({ where: { TokenAmm: tokenAmm } })).length > 0) {

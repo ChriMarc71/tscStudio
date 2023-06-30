@@ -9,18 +9,18 @@ datasource db {
 
 model doctors {
   Id              Int      @id @default(autoincrement())
-  Name            String?  @db.VarChar(50)  /// @encrypted
-  NameHash        String?  @db.VarChar(100) /// @encryption:hash(Name)
-  Surname         String?  @db.VarChar(50)  /// @encrypted
-  SurameHash      String?  @db.VarChar(100) /// @encryption:hash(Surname)
-  Email           String?  @unique @db.VarChar(100)  /// @encrypted
-  EmailHash       String?  @unique @db.VarChar(100)  /// @encryption:hash(Email)
-  Username        String?  @unique @db.VarChar(50)   /// @encrypted
-  UsernameHash    String?  @unique @db.VarChar(100)  /// @encryption:hash(Username)
-  Password        String?  @db.VarChar(50)  /// @encrypted
-  PasswordHash    String?  @db.VarChar(100) /// @encryption:hash(Password)
-  Number          String?  @db.VarChar(20)  /// @encrypted
-  NumberHash      String?  @db.VarChar(100) /// @encryption:hash(Number)
+  Name            String?  @db.VarChar(255)  /// @encrypted
+  NameHash        String?  @db.VarChar(255) /// @encryption:hash(Name)
+  Surname         String?  @db.VarChar(255)  /// @encrypted
+  SurameHash      String?  @db.VarChar(255) /// @encryption:hash(Surname)
+  Email           String?  @unique @db.VarChar(255)  /// @encrypted
+  EmailHash       String?  @unique @db.VarChar(255)  /// @encryption:hash(Email)
+  Username        String?  @unique @db.VarChar(255)   /// @encrypted
+  UsernameHash    String?  @unique @db.VarChar(255)  /// @encryption:hash(Username)
+  Password        String?  @db.VarChar(255)  /// @encrypted
+  PasswordHash    String?  @db.VarChar(255) /// @encryption:hash(Password)
+  Number          String?  @db.VarChar(255)  /// @encrypted
+  NumberHash      String?  @db.VarChar(255) /// @encryption:hash(Number)
   TokenAmm        String?  @unique @db.VarChar(255) /// @encrypted
   TokenAmmHash    String?  @unique @db.VarChar(255) /// @encryption:hash(TokenAmm)
   IsEnable        Boolean?
@@ -28,20 +28,20 @@ model doctors {
 
 model patients {
   Id              Int      @id @default(autoincrement())
-  Name            String?  @db.VarChar(50)  /// @encrypted
-  NameHash        String?  @db.VarChar(100) /// @encryption:hash(Name)
-  Surname         String?  @db.VarChar(50)  /// @encrypted
-  SurameHash      String?  @db.VarChar(100) /// @encryption:hash(Surname)
-  Email           String?  @unique @db.VarChar(100)  /// @encrypted
-  EmailHash       String?  @unique @db.VarChar(100)  /// @encryption:hash(Email)
-  Username        String?  @unique @db.VarChar(50)   /// @encrypted
-  UsernameHash    String?  @unique @db.VarChar(100)  /// @encryption:hash(Username)
-  Password        String?  @db.VarChar(50)  /// @encrypted
-  PasswordHash    String?  @db.VarChar(100) /// @encryption:hash(Password)
-  Number          String?  @db.VarChar(20)  /// @encrypted
-  NumberHash      String?  @db.VarChar(100) /// @encryption:hash(Number)
-  Doctor          String?  @db.VarChar(50)  /// @encrypted
-  DoctorHash      String?  @db.VarChar(50)  /// @encryption:hash(Doctor)
+  Name            String?  @db.VarChar(255)  /// @encrypted
+  NameHash        String?  @db.VarChar(255) /// @encryption:hash(Name)
+  Surname         String?  @db.VarChar(255)  /// @encrypted
+  SurameHash      String?  @db.VarChar(255) /// @encryption:hash(Surname)
+  Email           String?  @unique @db.VarChar(255)  /// @encrypted
+  EmailHash       String?  @unique @db.VarChar(255)  /// @encryption:hash(Email)
+  Username        String?  @unique @db.VarChar(255)   /// @encrypted
+  UsernameHash    String?  @unique @db.VarChar(255)  /// @encryption:hash(Username)
+  Password        String?  @db.VarChar(255)  /// @encrypted
+  PasswordHash    String?  @db.VarChar(255) /// @encryption:hash(Password)
+  Number          String?  @db.VarChar(255)  /// @encrypted
+  NumberHash      String?  @db.VarChar(255) /// @encryption:hash(Number)
+  Doctor          String?  @db.VarChar(255)  /// @encrypted
+  DoctorHash      String?  @db.VarChar(255)  /// @encryption:hash(Doctor)
   EmailConfirmed  Boolean?
   DoctorConfirmed Boolean?
   IsEnable        Boolean?
@@ -50,18 +50,18 @@ model patients {
 
 model secretariats {
   Id              Int      @id @default(autoincrement())
-  Name            String?  @db.VarChar(50)  /// @encrypted
-  NameHash        String?  @db.VarChar(100) /// @encryption:hash(Name)
-  Surname         String?  @db.VarChar(50)  /// @encrypted
-  SurameHash      String?  @db.VarChar(100) /// @encryption:hash(Surname)
-  Email           String?  @unique @db.VarChar(100)  /// @encrypted
-  EmailHash       String?  @unique @db.VarChar(100)  /// @encryption:hash(Email)
-  Username        String?  @unique @db.VarChar(50)   /// @encrypted
-  UsernameHash    String?  @unique @db.VarChar(100)  /// @encryption:hash(Username)
-  Password        String?  @db.VarChar(50)  /// @encrypted
-  PasswordHash    String?  @db.VarChar(100) /// @encryption:hash(Password)
-  Number          String?  @db.VarChar(20)  /// @encrypted
-  NumberHash      String?  @db.VarChar(100) /// @encryption:hash(Number)
+  Name            String?  @db.VarChar(255)  /// @encrypted
+  NameHash        String?  @db.VarChar(255) /// @encryption:hash(Name)
+  Surname         String?  @db.VarChar(255)  /// @encrypted
+  SurameHash      String?  @db.VarChar(255) /// @encryption:hash(Surname)
+  Email           String?  @unique @db.VarChar(255)  /// @encrypted
+  EmailHash       String?  @unique @db.VarChar(255)  /// @encryption:hash(Email)
+  Username        String?  @unique @db.VarChar(255)   /// @encrypted
+  UsernameHash    String?  @unique @db.VarChar(255)  /// @encryption:hash(Username)
+  Password        String?  @db.VarChar(255)  /// @encrypted
+  PasswordHash    String?  @db.VarChar(255) /// @encryption:hash(Password)
+  Number          String?  @db.VarChar(255)  /// @encrypted
+  NumberHash      String?  @db.VarChar(255) /// @encryption:hash(Number)
   TokenAmm        String?  @unique @db.VarChar(255) /// @encrypted
   TokenAmmHash    String?  @unique @db.VarChar(255) /// @encryption:hash(TokenAmm)
   IsEnable        Boolean?
@@ -69,16 +69,16 @@ model secretariats {
 
 model admin {
   Id              Int      @id @default(autoincrement())
-  Name            String?  @db.VarChar(50)  /// @encrypted
-  NameHash        String?  @db.VarChar(100) /// @encryption:hash(Name)
-  Surname         String?  @db.VarChar(50)  /// @encrypted
-  SurameHash      String?  @db.VarChar(100) /// @encryption:hash(Surname)
-  Email           String?  @unique @db.VarChar(100)  /// @encrypted
-  EmailHash       String?  @unique @db.VarChar(100)  /// @encryption:hash(Email)
-  Username        String?  @unique @db.VarChar(50)   /// @encrypted
-  UsernameHash    String?  @unique @db.VarChar(100)  /// @encryption:hash(Username)
-  Password        String?  @db.VarChar(50)  /// @encrypted
-  PasswordHash    String?  @db.VarChar(100) /// @encryption:hash(Password)
+  Name            String?  @db.VarChar(255)  /// @encrypted
+  NameHash        String?  @db.VarChar(255) /// @encryption:hash(Name)
+  Surname         String?  @db.VarChar(255)  /// @encrypted
+  SurameHash      String?  @db.VarChar(255) /// @encryption:hash(Surname)
+  Email           String?  @unique @db.VarChar(255)  /// @encrypted
+  EmailHash       String?  @unique @db.VarChar(255)  /// @encryption:hash(Email)
+  Username        String?  @unique @db.VarChar(255)   /// @encrypted
+  UsernameHash    String?  @unique @db.VarChar(255)  /// @encryption:hash(Username)
+  Password        String?  @db.VarChar(255)  /// @encrypted
+  PasswordHash    String?  @db.VarChar(255) /// @encryption:hash(Password)
   TokenAmm        String?  @unique @db.VarChar(255) /// @encrypted
   TokenAmmHash    String?  @unique @db.VarChar(255) /// @encryption:hash(TokenAmm)
 }
@@ -87,10 +87,10 @@ model bookings {
   Id                    Int       @id @default(autoincrement())
   StartTime             DateTime? @db.DateTime(0) 
   EndTime               DateTime? @db.DateTime(0)
-  PatientUsername       String?   @db.VarChar(50) /// @encrypted
-  PatientUsernameHash   String?   @db.VarChar(100) /// @encryption:hash(PatientUsername)
-  PatientNumber         String?   @db.VarChar(50) /// @encrypted
-  PatientNumberHash     String?   @db.VarChar(100) /// @encryption:hash(PatientNumber)
-  DoctorUsername        String?   @db.VarChar(50) /// @encrypted
-  DoctorUsernameHash    String?   @db.VarChar(100) /// @encryption:hash(DoctorUsername)
+  PatientUsername       String?   @db.VarChar(255) /// @encrypted
+  PatientUsernameHash   String?   @db.VarChar(255) /// @encryption:hash(PatientUsername)
+  PatientNumber         String?   @db.VarChar(255) /// @encrypted
+  PatientNumberHash     String?   @db.VarChar(255) /// @encryption:hash(PatientNumber)
+  DoctorUsername        String?   @db.VarChar(255) /// @encrypted
+  DoctorUsernameHash    String?   @db.VarChar(255) /// @encryption:hash(DoctorUsername)
 }

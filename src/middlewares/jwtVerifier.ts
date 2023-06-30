@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import jwt,{Algorithm} from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
 function isValidJwt(req: Request, res: Response, next: NextFunction): void {
