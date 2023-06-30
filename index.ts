@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 app.use("/admin", adminRouter);
 app.use("/auth", gestorRouter);
-app.use("/booking", bookingRouter);
+app.use("/bookings", bookingRouter);
 app.use("/patients", patientRouter);
 
 app.listen(port, () => {
