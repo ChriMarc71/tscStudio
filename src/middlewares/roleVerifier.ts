@@ -7,9 +7,10 @@ export const roleVerifier = (
   next: NextFunction
 ): void => {
   const tokenAmm: string = req.body.tokenAmm;
-  const path = req.path;
+  const url = req.baseUrl;
+  
 
-  if (path == "/admin") {
+  if (url == "/admin") {
     if (Prisma.admin.findMany({ where: { TokenAmm: tokenAmm } }) != null) {
       next();
     }else{
@@ -17,7 +18,7 @@ export const roleVerifier = (
         "you are not allowed to access the resource if you are not in the staff"
       );
     }
-  } else if (path == "/booking" || path == "/patients") {
+  } else if (url == "/booking" || url == "/patients") {
     if (Prisma.doctors.findMany({ where: { TokenAmm: tokenAmm } }) != null) {
       next();
     }else{
