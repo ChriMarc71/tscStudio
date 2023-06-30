@@ -1,7 +1,5 @@
 import { Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import prisma from "../../database/connection";
 
 export const updatePatients = async (req: Request,res: Response): Promise<void> => {
   const id: number = req.body.id;
